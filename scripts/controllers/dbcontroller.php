@@ -28,7 +28,7 @@
         }
 
         public function close(){ 
-            $this->connection = null;
+            DBController::$connection = null;
         }
 
         public function getAutoIncrement($table)

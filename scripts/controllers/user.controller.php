@@ -15,6 +15,18 @@
             $this->connection = $db->getConnection();
         }
 
+        public function check($key, $data){
+            $query = "SELECT * FROM {$this->table_name} WHERE $key = :$key;";
+
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute([":$key" => $data]);
+
+            if ($stmt->rowCount() > 0) {
+                return true;
+            }
+            return false;
+        }
+
         private function registerFaculty($data){
             $data['user_id'] = $this->connection->lastInsertId();
             $prep = array();

@@ -11,7 +11,7 @@
             'DB_PASSWORD'=>"",
             'DB_TYPE'=>'mysql',
 
-            'URL'=>"localhost:9999",
+            'URL'=>"http://deliverables.infinityfreeapp.com",
             'SAVE_DATE' => "/storage/",
 
             'FTP_HOSTNAME' => 'ftpupload.net',

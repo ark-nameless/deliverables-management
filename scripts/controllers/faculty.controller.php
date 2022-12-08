@@ -13,6 +13,18 @@
             $this->connection = $db->getConnection();
         }
 
+        public function check($key, $data){
+            $query = "SELECT * FROM {$this->table_name} WHERE $key = :$key;";
+
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute([":$key" => $data]);
+
+            if ($stmt->rowCount() > 0) {
+                return true;
+            }
+            return false;
+        }
+
         public function edit($id, $data){ 
             $set_query = '';
             $prep = [];
@@ -26,7 +38,7 @@
                 }
             }
 
-            $query = "UPDATE `{$this->table_name}` SET $set_query WHERE id=:id";
+            $query = "UPDATE `{$this->table_name}` SET $set_query WHERE user_id=:id";
             $stmt = $this->connection->prepare($query);
             $prep[':id'] = $id;
 
@@ -37,6 +49,14 @@
         }
 
         public function delete($id): bool{
+            $delete_submitted  = "DELETE FROM submitted_deliverables WHERE faculty_id = :id";
+            $stmt = $this->connection->prepare($delete_submitted);
+            $stmt->execute([':id' => $id]);
+
+            $delete_reports  = "DELETE FROM reports WHERE faculty_id = :id";
+            $stmt = $this->connection->prepare($delete_reports);
+            $stmt->execute([':id' => $id]);
+
             $query = "DELETE FROM {$this->table_name} WHERE user_id=:id";
             $stmt = $this->connection->prepare($query);
 

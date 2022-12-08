@@ -91,7 +91,7 @@
             </svg>
             <span>Files to Submit
               <?php 
-                if (count($files_to_submit) > 1){
+                if (count($files_to_submit) > 0){
                   echo <<<EOL
                     <span class="absolute inline-flex rounded-full h-3 w-3 bg-sky-500 opacity-75">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400"></span>

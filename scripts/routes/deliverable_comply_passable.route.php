@@ -26,9 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'deliverable_id' =>$_POST['deliverable_id'],
             'faculty_id' => $_POST['faculty_id'],
             'semester_id' =>$_POST['semester_id'],
-            'school_year_id' =>$_POST['schoo_year_id'],
+            'school_year_id' =>$_POST['school_year_id'],
             'ext' => $ext,
         ];
+
 
         if ($submission->add($data)){
             JS::alert('File Successfully Sent!');

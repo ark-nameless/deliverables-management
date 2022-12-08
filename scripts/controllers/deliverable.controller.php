@@ -55,6 +55,10 @@
         }
 
         public function delete($id){
+            $query = "DELETE FROM submitted_deliverables WHERE deliverable_id = :id";
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute([':id' => $id]);
+
             $query = "DELETE FROM {$this->table_name} WHERE id=:id";
             $stmt = $this->connection->prepare($query);
 
