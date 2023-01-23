@@ -60,7 +60,7 @@
           <div class="col-lg-6">
             <div class="signin-wrapper">
               <div class="form-wrapper">
-                <h6 class="mb-15 text-5xl font-semibold text-blue-600">Login</h6>
+                <h6 class="mb-15 text-5xl font-semibold text-red-900">Login</h6>
                 <p class="text-sm mb-25">
                 </p>
                 <form action="scripts/routes/login.route.php" method='post'>
@@ -86,7 +86,7 @@
                     <!-- end col -->
                     <div class="col-12">
                       <div class=" button-group d-flex justify-content-center flex-wrap">
-                        <button class=" main-btn primary-btn btn-hover w-100 text-center">
+                        <button class=" main-btn bg-red-900  btn-hover w-100 text-center text-white">
                           Login
                         </button>
                       </div>
