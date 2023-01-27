@@ -97,12 +97,12 @@
                 echo <<<EOL
                     <td>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary text-blue-900 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn bg-red-900 text-white text-blue-900 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Options
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <button class="btn btn-primary w-full"  data-bs-toggle="modal" data-bs-target="#editFaculty-{$row['id']}">
+                                    <button class="btn bg-red-900 text-white w-full"  data-bs-toggle="modal" data-bs-target="#editFaculty-{$row['id']}">
                                         Edit
                                     </button>
                                     <a href="scripts/routes/faculty_delete_faculty.route.php?id={$row['id']}&username={$row['username']}" class="btn btn-danger w-full" onclick="return confirm('Are you sure you want to delete {$row['username']}?');">
@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="col-span-full modal-footer">
                                         <button type="button" class="btn btn-secondary bg-slate-700" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary bg-blue-900">Update Faculty</button>
+                                        <button type="submit" class="btn bg-red-900 text-white">Update Faculty</button>
                                     </div>
                                 </div>
                                 </form>

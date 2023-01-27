@@ -284,7 +284,7 @@
         <div class="flex flex-col w-full h-full space-y-10">
 
           <div class="grid gap-5 grid-cols-1 md:grid-cols-3">
-            <button class="text-xl font-semibold text-white p-2 text-center rounded-xl bg-blue-600 hover:bg-blue-900" data-bs-toggle="modal" data-bs-target="#newSemester">Add New Semester</button>
+            <button class="text-xl font-semibold text-white p-2 text-center rounded-xl bg-red-900 hover:bg-red-900" data-bs-toggle="modal" data-bs-target="#newSemester">Add New Semester</button>
           </div>
 
 
@@ -341,7 +341,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger text-red-900" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary text-sky-900">Add</button>
+          <button type="submit" class="btn bg-red-900 text-white text-sky-900">Add</button>
           </form>
         </div>
       </div>

@@ -91,17 +91,17 @@
                     echo <<<EOL
                         <td>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-primary text-blue-900 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button type="button" class="btn bg-red-900 text-white text-blue-900 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     Options
                                 </button>
                                 <ul class="dropdown-menu space-y-1 px-2">
                                     <li>
-                                        <a href="/view-file.php?filename={$row['filename']}&ext={$row['ext']}" target="_blank" class="btn btn-primary  w-full">
+                                        <a href="/view-file.php?filename={$row['filename']}&ext={$row['ext']}" target="_blank" class="btn bg-red-900 text-white  w-full">
                                             Download
                                         </a>
                                     </li>
                                     <li>
-                                        <button class="btn btn-primary w-full" data-bs-toggle="modal" data-bs-target="#editDownloadable-{$row['id']}">
+                                        <button class="btn bg-red-900 text-white w-full" data-bs-toggle="modal" data-bs-target="#editDownloadable-{$row['id']}">
                                             Edit
                                         </button>
                                     </li>
@@ -119,7 +119,7 @@
                         <td>
                             <div class="btn-group">
                                 <a href="/view-file.php?filename={$row['filename']}&ext={$row['ext']}" target="_blank">
-                                    <button type="button" class="btn btn-primary text-blue-900">
+                                    <button type="button" class="btn bg-red-900 text-white text-blue-900">
                                         Download
                                     </button>
                                 </a>
@@ -150,7 +150,7 @@
                                         </div>
                                         <div class="col-span-full modal-footer">
                                             <button type="button" class="btn btn-secondary bg-slate-700" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary bg-blue-900">Update</button>
+                                            <button type="submit" class="btn bg-red-900 text-white">Update</button>
                                         </div>
                                     </div>
                                 </form>

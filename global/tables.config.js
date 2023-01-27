@@ -13,7 +13,7 @@ $(document).ready(function() {
 
     $(document).ready(function() {
         $('.buttons-print').each(function() {
-          $(this).removeClass('btn-secondary').addClass('btn-primary bg-blue-600')
-        })
+          $(this).removeClass('btn-secondary').addClass('btn bg-red-900 text-white')
+        });
     })
 } );

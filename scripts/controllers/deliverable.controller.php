@@ -115,12 +115,12 @@
                 echo <<<EOL
                     <td>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary text-blue-900 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn bg-red-900 text-white text-blue-900 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Options
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <button class="btn btn-primary w-full"  data-bs-toggle="modal" data-bs-target="#editDeliverable-{$row['id']}">
+                                    <button class="btn bg-red-900 text-white w-full"  data-bs-toggle="modal" data-bs-target="#editDeliverable-{$row['id']}">
                                         Edit
                                     </button>
                                     <a href="scripts/routes/deliverable_delete_passable.route.php?id={$row['id']}&name={$row['name']}" class="btn btn-danger w-full" onclick="return confirm('Are you sure you want to delete {$row['name']}?');">
@@ -157,7 +157,7 @@
                                         </div>
                                         <div class="col-span-full modal-footer">
                                             <button type="button" class="btn btn-secondary bg-slate-700" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary bg-blue-900">Update Deliverable</button>
+                                            <button type="submit" class="btn bg-red-900 text-white bg-red-900">Update Deliverable</button>
                                         </div>
                                     </div>
                                 </form>
@@ -190,7 +190,7 @@
                 echo <<<EOL
                     <td>
                         <div class="btn-group">
-                            <button class="btn btn-primary w-full"  data-bs-toggle="modal" data-bs-target="#complyDeliverables-{$row['id']}">
+                            <button class="btn bg-red-900 text-white w-full"  data-bs-toggle="modal" data-bs-target="#complyDeliverables-{$row['id']}">
                                 Comply
                             </button>
                         </div>
@@ -227,7 +227,7 @@
               echo <<<EOL
                                         <div class="col-span-full modal-footer">
                                             <button type="button" class="btn btn-secondary bg-slate-700" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary bg-blue-900">Comply</button>
+                                            <button type="submit" class="btn bg-red-900 text-white">Comply</button>
                                         </div>
                                     </div>
                                 </form>

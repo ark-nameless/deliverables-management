@@ -287,7 +287,7 @@
         <div class="flex flex-col w-full h-full space-y-10">
 
           <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mb-50">
-            <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal" data-bs-target="#newActivity">New Activity</button>
+            <button type="button" class="inline-block px-6 py-2.5 bg-red-900 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal" data-bs-target="#newActivity">New Activity</button>
           </div>
 
 
@@ -353,7 +353,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger text-red-900" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary text-sky-900">Add</button>
+          <button type="submit" class="btn bg-red-900 text-white text-sky-900">Add</button>
           </form>
         </div>
       </div>

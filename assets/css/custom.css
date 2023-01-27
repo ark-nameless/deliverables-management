@@ -1,8 +1,15 @@
 .buttons-print {
-    background-color: red;
+    background-color: maroon;
     color: white;
   }
   .buttons-excel {
-    background-color: blue;
+    background-color: maroon;
     color: white;
   }
+
+.page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: maroon;
+  border-color: maroon;
+}

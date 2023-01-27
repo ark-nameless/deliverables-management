@@ -116,14 +116,14 @@
             $unpassed_reports = $reports->getUnreviewedReports();
 
             $no_notifs = count($notifs) + count($unpassed_reports);
-            $ping = "<span>
+            $ping = "<span class='bg-red'>
                         {$no_notifs}
                     </span>";
 
             if ($no_notifs > 0){
                 $ping = <<<EOL
                     <span class="">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full mr-1.5 mt-1.5"></span>
+                        <span class="animate-ping absolute inline-flex h-full bg-red-900 w-full rounded-full mr-1.5 mt-1.5"></span>
                         {$no_notifs}
                     </span>
                 EOL;
