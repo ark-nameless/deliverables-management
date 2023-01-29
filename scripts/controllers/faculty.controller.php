@@ -57,16 +57,14 @@
             $stmt = $this->connection->prepare($delete_reports);
             $stmt->execute([':id' => $id]);
 
-            $delete_messages  = "DELETE FROM messages WHERE from = :id OR to = :id";
-            $stmt = $this->connection->prepare($delete_messages);
-            $stmt->execute([':id' => $id]);
-
             $query = "DELETE FROM {$this->table_name} WHERE user_id=:id";
             $stmt = $this->connection->prepare($query);
 
             if ($stmt->execute([':id' => $id])) {
                 $users = new UserController();
-                return $users->delete($id);
+                $result = $users->delete($id);
+
+                return $result;
             }
             return false;
         }

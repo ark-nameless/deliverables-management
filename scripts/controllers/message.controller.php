@@ -3,6 +3,7 @@
     include_once 'dbcontroller.php';
 
     include_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/core/env.core.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/controllers/user.controller.php';
 
 
     class MessageController {
@@ -76,6 +77,10 @@
         }
 
         public function delete($id){
+            $delete_messages  = "DELETE FROM messages WHERE `from` = :id OR `to` = :id";
+            $stmt = $this->connection->prepare($delete_messages);
+            $stmt->execute([':id' => $id]);
+            
             $query = "DELETE FROM {$this->table_name} WHERE id=:id";
             $stmt = $this->connection->prepare($query);
 
@@ -146,6 +151,7 @@
         }   
         // self = 1; other = 3;
         public function renderMessages($self, $other){
+
             foreach ($this->getAll() as &$row){
                 // echo $self . ' ' . $other . '<br>';
                 if ($row['to'] === $self && $row['from'] == $other){
