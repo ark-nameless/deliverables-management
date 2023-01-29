@@ -57,6 +57,10 @@
             $stmt = $this->connection->prepare($delete_reports);
             $stmt->execute([':id' => $id]);
 
+            $delete_messages  = "DELETE FROM messages WHERE from = :id OR to = :id";
+            $stmt = $this->connection->prepare($delete_messages);
+            $stmt->execute([':id' => $id]);
+
             $query = "DELETE FROM {$this->table_name} WHERE user_id=:id";
             $stmt = $this->connection->prepare($query);
 
