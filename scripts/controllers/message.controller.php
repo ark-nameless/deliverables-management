@@ -16,7 +16,10 @@
 
             $query = "
             ALTER TABLE `messages` ADD FOREIGN KEY (`from`) REFERENCES `users`(`id`) ON DELETE CASCADE;
-            ALTER TABLE `messages` ADD FOREIGN KEY (`to`) REFERENCES `users`(`id`) ON DELETE CASCADE;";
+            ALTER TABLE `messages` ADD FOREIGN KEY (`to`) REFERENCES `users`(`id`) ON DELETE CASCADE;
+            ALTER TABLE messages DROP FOREIGN KEY messages_ibfk_1;
+            ALTER TABLE messages DROP FOREIGN KEY messages_ibfk_2;
+            ";
             $stmt = $this->connection->prepare($query);
             $result = $stmt->execute();
         }
