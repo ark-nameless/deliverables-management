@@ -13,6 +13,12 @@
         public function __construct(){
             $db = new DBController();
             $this->connection = $db->getConnection();
+
+            $query = "
+            ALTER TABLE `messages` ADD FOREIGN KEY (`from`) REFERENCES `users`(`id`) ON DELETE CASCADE;
+            ALTER TABLE `messages` ADD FOREIGN KEY (`to`) REFERENCES `users`(`id`) ON DELETE CASCADE;";
+            $stmt = $this->connection->prepare($query);
+            $result = $stmt->execute();
         }
 
         public function add($data){
@@ -77,14 +83,18 @@
         }
 
         public function delete($id){
-            $delete_messages  = "DELETE FROM messages WHERE `from` = :id OR `to` = :id";
+            $this->connection->query('SET FOREIGN_KEY_CHECKS = 0');
+
+            $query = "SET FOREIGN_KEY_CHECKS = 0; DELETE FROM {$this->table_name} WHERE id=:id; ";
+            $stmt = $this->connection->prepare($query);
+            $result = $stmt->execute([':id' => $id]);
+
+            $delete_messages  = "DELETE FROM messages WHERE `from` = :id OR `to` = :id; SET FOREIGN_KEY_CHECKS = 1; ";
             $stmt = $this->connection->prepare($delete_messages);
             $stmt->execute([':id' => $id]);
-            
-            $query = "DELETE FROM {$this->table_name} WHERE id=:id";
-            $stmt = $this->connection->prepare($query);
 
-            if ($stmt->execute([':id' => $id])) {
+            $this->connection->query('SET FOREIGN_KEY_CHECKS = 1');
+            if ($result) {
                 return true;
             }
             return false;

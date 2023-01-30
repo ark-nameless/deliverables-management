@@ -120,8 +120,8 @@ ALTER TABLE `submitted_deliverables` ADD FOREIGN KEY (`semester_id`) REFERENCES 
 ALTER TABLE `submitted_deliverables` ADD FOREIGN KEY (`faculty_id`) REFERENCES `faculties`(`user_id`);
 ALTER TABLE `reports` ADD FOREIGN KEY (`activity_id`) REFERENCES `activities`(`id`);
 ALTER TABLE `reports` ADD FOREIGN KEY (`faculty_id`) REFERENCES `faculties`(`user_id`);
-ALTER TABLE `messages` ADD FOREIGN KEY (`from`) REFERENCES `users`(`id`);
-ALTER TABLE `messages` ADD FOREIGN KEY (`to`) REFERENCES `users`(`id`);
+ALTER TABLE `messages` ADD FOREIGN KEY (`from`) REFERENCES `users`(`id`) ON DELETE CASCADE;
+ALTER TABLE `messages` ADD FOREIGN KEY (`to`) REFERENCES `users`(`id`) ON DELETE CASCADE;
 
 
 
